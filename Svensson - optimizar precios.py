@@ -208,6 +208,8 @@ def Optimizar_precio(excel_data,N):
         #si tiene mejores resultados, guardar valores
         if (sum_RES2_aux<sum_RES2):
             print("Cambiaron parametros en iteracion ",n+1)
+            print("Error^2: ", sum_RES2_aux)
+            print("")
             param=c
             P_SV=P_SV_aux
             precios_SV=P_SV
@@ -246,6 +248,7 @@ def Optimizar_precio(excel_data,N):
         print("")
 
     print("Parametros: ", param[0], param[1], param[2], param[3], param[4], param[5])
+    print("Suma error^2: ",sum_RES2)
 
 
 
@@ -332,7 +335,7 @@ def Optimizar_precio(excel_data,N):
 
 
 excel_data = 'data_test.xlsm'
-N=2500#int(input("Numero de simulaciones? ")); #numero de simulaciones
+N=250#int(input("Numero de simulaciones? ")); #numero de simulaciones
 
 print("Hora inicio: ",time.strftime("%H:%M:%S"))
 Optimizar_precio(excel_data,N)
